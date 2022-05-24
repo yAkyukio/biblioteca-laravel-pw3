@@ -29,12 +29,12 @@ Route::post('/cadastrar-produto', function(Request $request){
         'estoque' => $request->estoque
     ]);
 
-    echo "Produto criado com sucesso!";
+    echo "<script>document.location.href = 'listar-produto'</script>";
 });
 
-Route::get('/listar-produto/{id}', function($id){
+Route::get('/listar-produto', function(){
     //dd(Produto::find($id)); //degub and die
-    $produto = Produto::find($id);
+    $produto = Produto::get();
     return view('listar', ['produto' => $produto]);
 });
 
@@ -62,5 +62,9 @@ Route::get('/excluir-produto/{id}', function($id){
     $produto = Produto::find($id);
     $produto->delete();
 
-    echo "Produto excluído com sucesso!";
+    echo `
+    <button onclick="document.location.href = 'listar-produto' ">
+    Voltar para listar
+    </button>
+    `;
 });
