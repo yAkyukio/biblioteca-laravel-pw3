@@ -9,21 +9,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
-    <body>
-        <h1>Produtos</h1>
+<body>
+    <h1>Produtos</h1>
 
-        <form action="/editar-produto/{{ $produto-> id }}" method="POST">
-            @csrf
-            <label for="lblNome">Nome:</label>
-            <input type="text" name="nome" value="{{ $produto->nome }}">
-            <br><br>
-            <label for="lblValor">Valor:</label>
-            <input type="text" name="valor" value="{{ $produto->valor }}">
-            <br><br>
-            <label for="lblQuantidade">Quantidade:</label>
-            <input type="text" name="estoque" value="{{ $produto->estoque }}">
-            <br><br>
-            <button>Cadastrar</button>
-        </form>
-    </body>
+    <form action="/editar-produto/{{ $produto-> id }}" method="POST">
+        @csrf
+        <label for="lblNome">Nome:</label>
+        <input type="text" name="nome" value="{{ $produto->nome }}">
+        <br><br>
+        <label for="lblValor">Valor:</label>
+        <input type="text" name="valor" value="{{ $produto->valor }}">
+        <br><br>
+        <label for="lblQuantidade">Quantidade:</label>
+        <input type="text" name="estoque" value="{{ $produto->estoque }}">
+        <br><br>
+        <button>Cadastrar</button>
+    </form>
+</body>
 </html>

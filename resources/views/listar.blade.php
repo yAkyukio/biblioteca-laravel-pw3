@@ -10,10 +10,8 @@
 
     <title>Produtos</title>
 </head>
-
 <body>
     <h1>Produtos</h1>
-
     <table class="table">
         <thead>
             <tr>
@@ -37,12 +35,8 @@
                     </td>
                 </tr>
             @endforeach
-
         </tbody>
     </table>
-
     <button type="button" class="btn btn-outline-primary" onclick="document.location.href = '/'">Cadastrar</button>
-
 </body>
-
 </html>

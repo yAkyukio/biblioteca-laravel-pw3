@@ -29,7 +29,7 @@ Route::post('/cadastrar-produto', function(Request $request){
         'estoque' => $request->estoque
     ]);
 
-    echo "<script>document.location.href = 'listar-produto'</script>";
+    return redirect("listar-produto");
 });
 
 Route::get('/listar-produto', function(){
@@ -54,7 +54,7 @@ Route::post('/editar-produto/{id}', function(Request $request, $id){
         'estoque' => $request->estoque
     ]);
 
-    echo "Produto editado com sucesso!";
+    return redirect("listar-produto");
 });
 
 Route::get('/excluir-produto/{id}', function($id){
@@ -62,9 +62,5 @@ Route::get('/excluir-produto/{id}', function($id){
     $produto = Produto::find($id);
     $produto->delete();
 
-    echo `
-    <button onclick="document.location.href = 'listar-produto' ">
-    Voltar para listar
-    </button>
-    `;
+    return redirect("listar-produto");
 });
